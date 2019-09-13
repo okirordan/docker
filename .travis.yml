@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  -  docker build -t okiror/docker -f Dockerfile .
+  -  docker build -t okirordan/docker -f Dockerfile .
 
 script:
-  - docker run okiror/docker npm run test -- --coverage
+  - docker run okirordan/docker npm run test -- --coverage
