@@ -7,3 +7,18 @@ before_install:
 
 script:
   - docker run okirordan/docker npm run test -- --coverage
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "edulalo"
+  env: "Edulalo-env"
+  bucket_name: "elasticbeanstalk-us-east-2-187445493376"
+  bucket_path: "edula"
+  on:
+    branch: master
+
+  access_key_id: $aws_accesskey
+  secretaccess_key:
+    secure: "$aws_secretkey"
