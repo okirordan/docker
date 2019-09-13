@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  -  docker build -t okiror/docker -f Dockerfile .
+
+script:
+  - docker run okiror/docker npm run test -- --coverage
